@@ -10,7 +10,7 @@ class GTestNvimTest(ConanFile):
     url = "<Package recipe repository url here, for issues about the package>"
     description = "An example project that uses gtest for UTs. It is used to test " \
             "gtest.vim lua plugin"
-    topics = ("gtest", "NeoVim", "plugin")
+    topics = ("gtest", "NeoVim", "plugin", "testing")
     settings = "os", "compiler", "build_type", "arch"
     options = {"fPIC": [True, False]}
     default_options = {"fPIC": True}
