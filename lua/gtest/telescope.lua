@@ -25,8 +25,10 @@ local start_telescope = function(test_list)
     finder = gtest_finder,
     attach_mappings = function(prompt_bufnr, _)
       actions.select_default:replace(function(prompt_bufnr)
+        local current_picker = action_state.get_current_picker(prompt_bufnr)
+        local pattern = current_picker:_get_prompt()
         actions.close(prompt_bufnr)
-        gtest.set_pattern(action_state.get_selected_entry().value)
+        gtest.set_pattern(pattern)
         gtest.run()
       end)
       return true
